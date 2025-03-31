@@ -1,0 +1,616 @@
+/* Общие стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    color: #333;
+    line-height: 1.6;
+    background: #f5f7fa url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center fixed;
+    background-size: cover;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(10, 32, 86, 0.85);
+    z-index: -1;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Шапка */
+header {
+    background: rgba(26, 58, 143, 0.9);
+    color: white;
+    padding: 20px 0;
+    border-radius: 0 0 15px 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(5px);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+header::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+    animation: pulse 12s infinite linear;
+}
+
+@keyframes pulse {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.header-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.header-text {
+    flex: 1;
+}
+
+.header-image {
+    flex-basis: 100%;
+    position: relative;
+    margin-top: 20px;
+}
+
+.logo {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo img {
+    height: 40px;
+    margin-right: 15px;
+}
+
+.logo-text {
+    font-size: 2rem;
+    font-weight: 700;
+    color: white;
+}
+
+.main-heading {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    line-height: 1.2;
+}
+
+.tagline {
+    font-size: 1rem;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.stats {
+    font-size: 1rem;
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+.contact-button {
+    display: inline-block;
+    background-color: #1a237e;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    width: 100%;
+}
+
+.contact-button:hover {
+    background-color: #0c1752;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Основной контент */
+.main-content {
+    padding: 30px 0;
+}
+
+.benefits-section {
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    margin-bottom: 20px;
+    transition: transform 0.3s;
+    backdrop-filter: blur(2px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.benefits-section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.section-title {
+    color: #1a3a8f;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    text-align: center;
+    position: relative;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.section-title::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(to right, #1a3a8f, #4a90e2);
+    margin: 15px auto 0;
+    border-radius: 2px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.benefit-card {
+    background: linear-gradient(145deg, rgba(245, 247, 250, 0.95), rgba(230, 233, 240, 0.95));
+    border-radius: 12px;
+    padding: 20px;
+    transition: all 0.3s;
+    border-left: 4px solid #1a3a8f;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.benefit-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(26, 58, 143, 0.03), rgba(74, 144, 226, 0.03));
+    z-index: -1;
+}
+
+.benefit-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(26, 58, 143, 0.15);
+}
+
+.benefit-icon {
+    font-size: 2rem;
+    color: #1a3a8f;
+    margin-bottom: 15px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.benefit-title {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #0c2461;
+    font-weight: 600;
+}
+
+.benefit-text {
+    font-size: 1rem;
+    color: #444;
+}
+
+.contact-section {
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    margin-bottom: 20px;
+    transition: transform 0.3s;
+    backdrop-filter: blur(2px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.contact-section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.contact-card {
+    background: linear-gradient(145deg, rgba(245, 247, 250, 0.95), rgba(230, 233, 240, 0.95));
+    border-radius: 12px;
+    padding: 25px;
+    text-align: center;
+    transition: all 0.3s;
+    border-left: 4px solid #1a3a8f;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 200px;
+}
+
+.contact-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(26, 58, 143, 0.03), rgba(74, 144, 226, 0.03));
+    z-index: -1;
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(26, 58, 143, 0.15);
+}
+
+.contact-icon {
+    font-size: 2.5rem;
+    color: #1a3a8f;
+    margin-bottom: 15px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.contact-title {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    color: #0c2461;
+    font-weight: 600;
+}
+
+.contact-info {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    color: #444;
+    flex-grow: 1;
+}
+
+.contact-link {
+    display: inline-block;
+    background-color: #1a3a8f;
+    color: white;
+    padding: 15px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s;
+    margin-top: auto;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    text-align: center;
+}
+
+.contact-link:hover {
+    background-color: #0c2461;
+    box-shadow: 0 8px 15px rgba(26, 58, 143, 0.3);
+    transform: translateY(-2px);
+}
+
+/* Reviews Section */
+.reviews-section {
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    margin-bottom: 20px;
+    transition: transform 0.3s;
+    backdrop-filter: blur(2px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.reviews-section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.reviews-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.review-card {
+    background: rgba(245, 247, 250, 0.95);
+    border-radius: 12px;
+    padding: 20px;
+    transition: all 0.3s;
+    border-left: 4px solid #1a3a8f;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    position: relative;
+}
+
+.review-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(26, 58, 143, 0.15);
+}
+
+.review-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.review-author {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #0c2461;
+}
+
+.review-stars {
+    color: #FFD700;
+    font-size: 1rem;
+}
+
+.review-text {
+    color: #444;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* CTA секция */
+.cta-section {
+    background: linear-gradient(135deg, rgba(26, 58, 143, 0.9), rgba(74, 144, 226, 0.9));
+    color: white;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    margin-top: 30px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.cta-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://images.unsplash.com/photo-1558002038-1055907df827?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') center/cover;
+    opacity: 0.1;
+    z-index: -1;
+}
+
+.cta-title {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.cta-text {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    opacity: 0.9;
+    max-width: 100%;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: white;
+    color: #1a3a8f;
+    padding: 12px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1rem;
+    transition: all 0.3s;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+.cta-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: 0.5s;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.cta-button:hover::before {
+    left: 100%;
+}
+
+/* Подвал */
+footer {
+    background-color: rgba(12, 36, 97, 0.95);
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 30px;
+    backdrop-filter: blur(5px);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-text {
+    opacity: 0.8;
+    font-size: 0.8rem;
+}
+
+/* Анимации */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.contact-card, .review-card, .benefit-card {
+    animation: fadeIn 0.5s ease-out forwards;
+    opacity: 0;
+}
+
+.contact-card:nth-child(1), .review-card:nth-child(1), .benefit-card:nth-child(1) { animation-delay: 0.1s; }
+.contact-card:nth-child(2), .review-card:nth-child(2), .benefit-card:nth-child(2) { animation-delay: 0.2s; }
+.contact-card:nth-child(3), .review-card:nth-child(3), .benefit-card:nth-child(3) { animation-delay: 0.3s; }
+.contact-card:nth-child(4), .review-card:nth-child(4), .benefit-card:nth-child(4) { animation-delay: 0.4s; }
+.contact-card:nth-child(5), .benefit-card:nth-child(5) { animation-delay: 0.5s; }
+.benefit-card:nth-child(6) { animation-delay: 0.6s; }
+
+/* Форма (для будущей доработки) */
+.consult-form {
+    display: none;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    width: 90%;
+}
+
+.consult-form h2 {
+    margin-bottom: 15px;
+    font-size: 1.6rem;
+    color: #1a3a8f;
+}
+
+.consult-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.consult-form input, .consult-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.consult-form button[type="submit"] {
+    background-color: #1a3a8f;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    width: 100%;
+}
+
+.consult-form button[type="submit"]:hover {
+    background-color: #0c2461;
+    box-shadow: 0 8px 15px rgba(26, 58, 143, 0.3);
+    transform: translateY(-2px);
+}
+
+.close-button {
+    background-color: #ff0000;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    transition: all 0.3s;
+}
+
+.close-button:hover {
+    background-color: #cc0000;
+}
+
+/* Эффекты при наведении */
+.hover-scale {
+    transition: transform 0.3s;
+}
+
+.hover-scale:hover {
+    transform: scale(1.02);
+}
+
+/* Медиазапросы для адаптивного дизайна */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    .header-content, .main-heading, .tagline, .stats {
+        text-align: center;
+    }
+
+    .benefits-grid, .contact-grid, .reviews-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-card, .review-card, .benefit-card {
+        padding: 15px;
+    }
+
+    .contact-button, .cta-button {
+        padding: 12px 20px;
+        font-size: 0.9rem;
+    }
+}
