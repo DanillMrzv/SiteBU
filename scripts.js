@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function sendToTelegram(data) {
         const telegramBotToken = '5200789165:AAGc06OVXThJ5aMYbnFjsvq7gpu4TVMndGo';
-        const chatId = '@VelikieLukeWeatherBot';
+        const chatId = '5200789165';
         const message = `Новая заявка на консультацию:\n` +
             `Имя: ${data.first_name}\n` +
             `Фамилия: ${data.last_name}\n` +
