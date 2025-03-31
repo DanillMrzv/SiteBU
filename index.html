@@ -14,7 +14,7 @@
                 <div class="header-text">
                     <div class="logo">
                         <img src="logo.png" alt="НАРОДНЫЙ-ЮРИСТ" loading="lazy">
-                        
+                        <div class="logo-text">НАРОДНЫЙ ЮРИСТ</div>
                     </div>
                     <h1 class="main-heading">СПИШЕМ ВСЕ<br>КРЕДИТЫ И ДОЛГИ</h1>
                     <p class="tagline">Жизнь без долгов — законное право каждого! Спишем кредиты, сохраним имущество, избавим от коллекторов</p>
@@ -144,31 +144,17 @@
                 <button class="cta-button" onclick="document.getElementById('consult-form').style.display='block'">Получить консультацию</button>
             </section>
 
-            <!-- Модальное окно с формой -->
             <div id="consult-form" class="consult-form">
                 <h2>Запись на консультацию</h2>
-                <form id="consultation-form">
-                    <label for="first-name">Имя:</label>
-                    <input type="text" id="first-name" name="first_name" required>
-
-                    <label for="last-name">Фамилия:</label>
-                    <input type="text" id="last-name" name="last_name" required>
-
-                    <label for="middle-name">Отчество:</label>
-                    <input type="text" id="middle-name" name="middle_name" required>
-
-                    <label for="debt-amount">Сумма долга:</label>
-                    <input type="number" id="debt-amount" name="debt_amount" required>
-
-                    <label for="phone">Номер телефона:</label>
+                <form action="#" method="POST">
+                    <label for="name">Имя:</label>
+                    <input type="text" id="name" name="name" required>
+                    <label for="phone">Телефон:</label>
                     <input type="tel" id="phone" name="phone" required>
-
-                    <label for="email">Email (не обязательно):</label>
-                    <input type="email" id="email" name="email">
-
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
                     <label for="message">Сообщение:</label>
-                    <textarea id="message" name="message" rows="4"></textarea>
-
+                    <textarea id="message" name="message" rows="4" required></textarea>
                     <button type="submit">Отправить</button>
                 </form>
                 <button class="close-button" onclick="document.getElementById('consult-form').style.display='none'">Закрыть</button>
